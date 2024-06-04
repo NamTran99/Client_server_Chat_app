@@ -4,12 +4,12 @@
         "source": "C:\\Users\\LAPTOP\\.gradle\\daemon\\8.0\\com.advanced.mockclient.app-main-53:\\layout\\item_conversation.xml"
     },
     {
-        "merged": "C:\\Users\\LAPTOP\\.gradle\\daemon\\8.0\\com.advanced.mockclient.app-merged_res-51:\\layout_item_received_message.xml.flat",
-        "source": "C:\\Users\\LAPTOP\\.gradle\\daemon\\8.0\\com.advanced.mockclient.app-main-53:\\layout\\item_received_message.xml"
-    },
-    {
         "merged": "C:\\Users\\LAPTOP\\.gradle\\daemon\\8.0\\com.advanced.mockclient.app-merged_res-51:\\layout_fragment_chat.xml.flat",
         "source": "C:\\Users\\LAPTOP\\.gradle\\daemon\\8.0\\com.advanced.mockclient.app-main-53:\\layout\\fragment_chat.xml"
+    },
+    {
+        "merged": "C:\\Users\\LAPTOP\\.gradle\\daemon\\8.0\\com.advanced.mockclient.app-merged_res-51:\\layout_item_received_message.xml.flat",
+        "source": "C:\\Users\\LAPTOP\\.gradle\\daemon\\8.0\\com.advanced.mockclient.app-main-53:\\layout\\item_received_message.xml"
     },
     {
         "merged": "C:\\Users\\LAPTOP\\.gradle\\daemon\\8.0\\com.advanced.mockclient.app-merged_res-51:\\drawable_ic_arrow_back.xml.flat",
@@ -44,10 +44,6 @@
         "source": "C:\\Users\\LAPTOP\\.gradle\\daemon\\8.0\\com.advanced.mockclient.app-main-53:\\xml\\data_extraction_rules.xml"
     },
     {
-        "merged": "com.advanced.mockclient.app-merged_res-51:/drawable_image_nam_tran.jpg.flat",
-        "source": "com.advanced.mockclient.app-main-53:/drawable/image_nam_tran.jpg"
-    },
-    {
         "merged": "C:\\Users\\LAPTOP\\.gradle\\daemon\\8.0\\com.advanced.mockclient.app-merged_res-51:\\drawable_background_chat_input.xml.flat",
         "source": "C:\\Users\\LAPTOP\\.gradle\\daemon\\8.0\\com.advanced.mockclient.app-main-53:\\drawable\\background_chat_input.xml"
     },
@@ -56,16 +52,16 @@
         "source": "C:\\Users\\LAPTOP\\.gradle\\daemon\\8.0\\com.advanced.mockclient.app-main-53:\\navigation\\mobile_navigation.xml"
     },
     {
-        "merged": "C:\\Users\\LAPTOP\\.gradle\\daemon\\8.0\\com.advanced.mockclient.app-merged_res-51:\\drawable_ic_launcher_foreground.xml.flat",
-        "source": "C:\\Users\\LAPTOP\\.gradle\\daemon\\8.0\\com.advanced.mockclient.app-main-53:\\drawable\\ic_launcher_foreground.xml"
+        "merged": "C:\\Users\\LAPTOP\\.gradle\\daemon\\8.0\\com.advanced.mockclient.app-merged_res-51:\\drawable_background_content_header.xml.flat",
+        "source": "C:\\Users\\LAPTOP\\.gradle\\daemon\\8.0\\com.advanced.mockclient.app-main-53:\\drawable\\background_content_header.xml"
     },
     {
         "merged": "C:\\Users\\LAPTOP\\.gradle\\daemon\\8.0\\com.advanced.mockclient.app-merged_res-51:\\anim_slide_out_left.xml.flat",
         "source": "C:\\Users\\LAPTOP\\.gradle\\daemon\\8.0\\com.advanced.mockclient.app-main-53:\\anim\\slide_out_left.xml"
     },
     {
-        "merged": "C:\\Users\\LAPTOP\\.gradle\\daemon\\8.0\\com.advanced.mockclient.app-merged_res-51:\\drawable_background_content_header.xml.flat",
-        "source": "C:\\Users\\LAPTOP\\.gradle\\daemon\\8.0\\com.advanced.mockclient.app-main-53:\\drawable\\background_content_header.xml"
+        "merged": "C:\\Users\\LAPTOP\\.gradle\\daemon\\8.0\\com.advanced.mockclient.app-merged_res-51:\\drawable_ic_launcher_foreground.xml.flat",
+        "source": "C:\\Users\\LAPTOP\\.gradle\\daemon\\8.0\\com.advanced.mockclient.app-main-53:\\drawable\\ic_launcher_foreground.xml"
     },
     {
         "merged": "C:\\Users\\LAPTOP\\.gradle\\daemon\\8.0\\com.advanced.mockclient.app-merged_res-51:\\drawable_background_remove.xml.flat",
@@ -76,12 +72,12 @@
         "source": "C:\\Users\\LAPTOP\\.gradle\\daemon\\8.0\\com.advanced.mockclient.app-main-53:\\drawable\\background_delete.xml"
     },
     {
-        "merged": "C:\\Users\\LAPTOP\\.gradle\\daemon\\8.0\\com.advanced.mockclient.app-merged_res-51:\\drawable_background_received_message.xml.flat",
-        "source": "C:\\Users\\LAPTOP\\.gradle\\daemon\\8.0\\com.advanced.mockclient.app-main-53:\\drawable\\background_received_message.xml"
-    },
-    {
         "merged": "C:\\Users\\LAPTOP\\.gradle\\daemon\\8.0\\com.advanced.mockclient.app-merged_res-51:\\drawable_background_cancel.xml.flat",
         "source": "C:\\Users\\LAPTOP\\.gradle\\daemon\\8.0\\com.advanced.mockclient.app-main-53:\\drawable\\background_cancel.xml"
+    },
+    {
+        "merged": "C:\\Users\\LAPTOP\\.gradle\\daemon\\8.0\\com.advanced.mockclient.app-merged_res-51:\\drawable_background_received_message.xml.flat",
+        "source": "C:\\Users\\LAPTOP\\.gradle\\daemon\\8.0\\com.advanced.mockclient.app-main-53:\\drawable\\background_received_message.xml"
     },
     {
         "merged": "C:\\Users\\LAPTOP\\.gradle\\daemon\\8.0\\com.advanced.mockclient.app-merged_res-51:\\layout_item_sent_message.xml.flat",
@@ -96,12 +92,12 @@
         "source": "C:\\Users\\LAPTOP\\.gradle\\daemon\\8.0\\com.advanced.mockclient.app-main-53:\\mipmap-hdpi\\ic_launcher_round.webp"
     },
     {
-        "merged": "C:\\Users\\LAPTOP\\.gradle\\daemon\\8.0\\com.advanced.mockclient.app-merged_res-51:\\mipmap-mdpi_ic_launcher.webp.flat",
-        "source": "C:\\Users\\LAPTOP\\.gradle\\daemon\\8.0\\com.advanced.mockclient.app-main-53:\\mipmap-mdpi\\ic_launcher.webp"
-    },
-    {
         "merged": "C:\\Users\\LAPTOP\\.gradle\\daemon\\8.0\\com.advanced.mockclient.app-merged_res-51:\\layout_dialog_remove_conversation.xml.flat",
         "source": "C:\\Users\\LAPTOP\\.gradle\\daemon\\8.0\\com.advanced.mockclient.app-main-53:\\layout\\dialog_remove_conversation.xml"
+    },
+    {
+        "merged": "C:\\Users\\LAPTOP\\.gradle\\daemon\\8.0\\com.advanced.mockclient.app-merged_res-51:\\mipmap-mdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\LAPTOP\\.gradle\\daemon\\8.0\\com.advanced.mockclient.app-main-53:\\mipmap-mdpi\\ic_launcher.webp"
     },
     {
         "merged": "C:\\Users\\LAPTOP\\.gradle\\daemon\\8.0\\com.advanced.mockclient.app-merged_res-51:\\mipmap-xxxhdpi_ic_launcher.webp.flat",
@@ -168,6 +164,10 @@
         "source": "C:\\Users\\LAPTOP\\.gradle\\daemon\\8.0\\com.advanced.mockclient.app-main-53:\\drawable\\background_image.xml"
     },
     {
+        "merged": "C:\\Users\\LAPTOP\\.gradle\\daemon\\8.0\\com.advanced.mockclient.app-merged_res-51:\\drawable_image_nam_tran.jpg.flat",
+        "source": "C:\\Users\\LAPTOP\\.gradle\\daemon\\8.0\\com.advanced.mockclient.app-main-53:\\drawable\\image_nam_tran.jpg"
+    },
+    {
         "merged": "C:\\Users\\LAPTOP\\.gradle\\daemon\\8.0\\com.advanced.mockclient.app-merged_res-51:\\drawable_background_back.xml.flat",
         "source": "C:\\Users\\LAPTOP\\.gradle\\daemon\\8.0\\com.advanced.mockclient.app-main-53:\\drawable\\background_back.xml"
     },
@@ -186,6 +186,10 @@
     {
         "merged": "C:\\Users\\LAPTOP\\.gradle\\daemon\\8.0\\com.advanced.mockclient.app-merged_res-51:\\layout_fragment_home.xml.flat",
         "source": "C:\\Users\\LAPTOP\\.gradle\\daemon\\8.0\\com.advanced.mockclient.app-main-53:\\layout\\fragment_home.xml"
+    },
+    {
+        "merged": "com.advanced.mockclient.app-merged_res-51:/drawable_image_mai_trang.png.flat",
+        "source": "com.advanced.mockclient.app-main-53:/drawable/image_mai_trang.png"
     },
     {
         "merged": "C:\\Users\\LAPTOP\\.gradle\\daemon\\8.0\\com.advanced.mockclient.app-merged_res-51:\\mipmap-mdpi_ic_launcher_round.webp.flat",
@@ -216,8 +220,16 @@
         "source": "C:\\Users\\LAPTOP\\.gradle\\daemon\\8.0\\com.advanced.mockclient.app-main-53:\\mipmap-hdpi\\ic_launcher.webp"
     },
     {
+        "merged": "com.advanced.mockclient.app-merged_res-51:/drawable_image_minh_quan.png.flat",
+        "source": "com.advanced.mockclient.app-main-53:/drawable/image_minh_quan.png"
+    },
+    {
         "merged": "C:\\Users\\LAPTOP\\.gradle\\daemon\\8.0\\com.advanced.mockclient.app-merged_res-51:\\mipmap-xhdpi_ic_launcher_round.webp.flat",
         "source": "C:\\Users\\LAPTOP\\.gradle\\daemon\\8.0\\com.advanced.mockclient.app-main-53:\\mipmap-xhdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.advanced.mockclient.app-merged_res-51:/drawable_image_ngoc_lan.png.flat",
+        "source": "com.advanced.mockclient.app-main-53:/drawable/image_ngoc_lan.png"
     },
     {
         "merged": "C:\\Users\\LAPTOP\\.gradle\\daemon\\8.0\\com.advanced.mockclient.app-merged_res-51:\\drawable_ic_playlist.xml.flat",

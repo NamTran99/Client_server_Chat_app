@@ -36,10 +36,10 @@ drawable ic_playlist
 drawable ic_playlist_remove
 drawable ic_search
 drawable ic_send
-drawable image_hoang_thom
 drawable image_mai_trang
 drawable image_minh_quan
 drawable image_nam_tran
+drawable image_ngoc_lan
 id action_homeFragment_to_chatFragment
 id chatFragment
 id constraint_heading

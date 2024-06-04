@@ -107,8 +107,8 @@ public class ItemUserBindingImpl extends ItemUserBinding  {
 
 
                 if (user != null) {
-                    // read user.name
-                    userName = user.getName();
+                    // read  name
+                    userName =  getName();
                 }
         }
         // batch finished

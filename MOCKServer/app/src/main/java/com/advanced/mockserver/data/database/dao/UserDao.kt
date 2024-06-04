@@ -5,9 +5,7 @@ import androidx.room.*
 import com.advanced.mockserver.User
 import com.advanced.mockserver.utils.Constants
 
-/***
- * Created by HoangRyan aka LilDua on 10/27/2023.
- */
+ 
 @Dao
 interface UserDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)

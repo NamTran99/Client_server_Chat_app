@@ -3,9 +3,6 @@ package com.advanced.mockserver
 import android.os.Parcelable
 import kotlinx.parcelize.Parcelize
 
-/***
- * Created by HoangRyan aka LilDua on 10/28/2023.
- */
 @Parcelize
 data class ChatMessage(
     val chatId: Long = 0,

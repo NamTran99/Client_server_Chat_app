@@ -12,9 +12,6 @@ import com.advanced.mockserver.Conversation
 import com.advanced.mockserver.User
 import com.advanced.mockserver.utils.Constants
 
-/***
- * Created by HoangRyan aka LilDua on 10/27/2023.
- */
 @Database(
     entities = [User::class, Conversation::class, ChatMessage::class],
     version = Constants.DATABASE_VERSION

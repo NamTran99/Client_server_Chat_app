@@ -12,9 +12,6 @@ import com.advanced.mockclient.databinding.ItemConversationBinding
 import com.advanced.mockserver.utils.Constants
 import com.advanced.mockserver.ui.home.HomeFragment
 
-/***
- * Created by HoangRyan aka LilDua on 10/29/2023.
- */
 class ConversationAdapter(
     private val homeFragment: HomeFragment,
     private val navController: NavController

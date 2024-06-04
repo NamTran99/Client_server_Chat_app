@@ -8,10 +8,13 @@ import com.advanced.mockserver.Conversation
 import com.advanced.mockserver.IRemoteService
 import com.advanced.mockserver.User
 import com.advanced.mockserver.data.database.AppDatabase
+import com.advanced.mockserver.data.database.AppLocal.userLogin
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.coroutineScope
+import kotlinx.coroutines.launch
 
-/***
- * Created by HoangRyan aka LilDua on 10/27/2023.
- */
+
 class RemoteService : Service(){
     private lateinit var chatDatabase: AppDatabase
     override fun onBind(intent: Intent?): IBinder {
@@ -50,6 +53,14 @@ class RemoteService : Service(){
             timestamp: String?
         ) {
             chatDatabase.conversationDao().updateConversation(conversationId,lastMessage!!,timestamp!!)
+        }
+
+        override fun loginUser(
+            data: User
+        ){
+            CoroutineScope(Dispatchers.IO).launch {
+                userLogin.emit()
+            }
         }
     }
 

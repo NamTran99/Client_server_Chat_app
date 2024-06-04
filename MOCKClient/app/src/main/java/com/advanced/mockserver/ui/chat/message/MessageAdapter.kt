@@ -9,9 +9,6 @@ import com.advanced.mockclient.databinding.ItemReceivedMessageBinding
 import com.advanced.mockclient.databinding.ItemSentMessageBinding
 import com.advanced.mockserver.utils.Constants
 
-/***
- * Created by HoangRyan aka LilDua on 10/28/2023.
- */
 class MessageAdapter (
     private val senderId: Long,
     private val receivedImage: Int
@@ -28,7 +25,7 @@ class MessageAdapter (
         RecyclerView.ViewHolder(receivedBinding.root){
             fun bind(chatMessage: ChatMessage) {
                 receivedBinding.message = chatMessage
-                receivedBinding.imageUser.setImageResource(receivedImage)
+                receivedBinding.image setImageResource(receivedImage)
             }
     }
 

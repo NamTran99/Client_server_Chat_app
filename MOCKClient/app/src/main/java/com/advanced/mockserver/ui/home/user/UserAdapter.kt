@@ -19,7 +19,7 @@ class UserAdapter (
         RecyclerView.ViewHolder(binding.root) {
         fun bind(user: User) {
             binding.user = user
-            binding.imageContact.setImageResource(user.image)
+            binding.imageContact.setImageResource( image)
         }
     }
 
@@ -39,7 +39,7 @@ class UserAdapter (
 
         //handle on long click
         holder.itemView.setOnLongClickListener {
-            homeFragment.removeUserWithId(user.id)
+            homeFragment.removeUserWithId( id)
             true
         }
     }

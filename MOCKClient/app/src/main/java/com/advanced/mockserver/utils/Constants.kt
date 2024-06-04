@@ -1,8 +1,5 @@
 package com.advanced.mockserver.utils
 
-/***
- * Created by HoangRyan aka LilDua on 10/27/2023.
- */
 object Constants {
 
     //conversation

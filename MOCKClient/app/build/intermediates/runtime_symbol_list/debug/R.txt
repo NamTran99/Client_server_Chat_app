@@ -3055,10 +3055,10 @@ int drawable ic_playlist_remove 0x7f0700a8
 int drawable ic_search 0x7f0700a9
 int drawable ic_search_black_24 0x7f0700aa
 int drawable ic_send 0x7f0700ab
-int drawable image_hoang_thom 0x7f0700ac
 int drawable image_mai_trang 0x7f0700ad
 int drawable image_minh_quan 0x7f0700ae
 int drawable image_nam_tran 0x7f0700fb
+int drawable image_ngoc_lan 0x7f0700fc
 int drawable m3_appbar_background 0x7f0700b0
 int drawable m3_avd_hide_password 0x7f0700b1
 int drawable m3_avd_show_password 0x7f0700b2

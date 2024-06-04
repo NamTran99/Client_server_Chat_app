@@ -26,7 +26,7 @@
     <string name="select_image">Select image</string>
     <string name="account">ACCOUNT</string>
     <string name="image_remove_user">Image remove user</string>
-    <string name="you_ll_can_t_connect_to_this_user">You\'ll can\'t connect to this user.</string>
+    <string name="you_ll_can_t_connect_to_this_user">You\'ll can\'t connect to this  </string>
     <string name="image_dialog_remove_conversation">Image dialog remove conversation</string>
     <string name="you_ll_can_t_see_all_message_any_more">You\'ll can\'t see all message any more.</string>
     <string name="image_logout">Image logout</string>
@@ -34,4 +34,20 @@
     <string name="server_chat_app">Server Chat App</string>
     <string name="conversations">Conversations</string>
     <string name="client_chat_app">Client Chat App</string>
+    <string name="app_name">Login Page</string>
+    <string name="login_text">Login</string>
+    <string name="edit_text_username">Username</string>
+    <string name="edit_text_password">Password</string>
+    <string name="button_sign_in">Sign in</string>
+    <string name="button_sign_up">Don`t have an account? Sign up!</string>
+
+    <string name="sign_up">Sign up</string>
+    <string name="edit_text_password_confirm">Confirm password</string>
+    <string name="button_sign_up_activity">Sign up</string>
+    <string name="password_error_no_password">Please enter password</string>
+    <string name="password_error_short_password">Password should contain more than 5 letters</string>
+    <string name="password_error_password_not_confirmed">Wrong password! Please type again</string>
+    <string name="username_error_no_username">Please enter username</string>
+    <string name="username_error_long_username">Username is too long</string>
+    <string name="login_error_incorrect_input">Username or login is incorrect. Try again or sign up!</string>
 </resources>

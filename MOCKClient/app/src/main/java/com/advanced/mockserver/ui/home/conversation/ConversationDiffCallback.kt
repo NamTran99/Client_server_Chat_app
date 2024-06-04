@@ -3,9 +3,6 @@ package com.advanced.mockserver.ui.home.conversation
 import androidx.recyclerview.widget.DiffUtil
 import com.advanced.mockserver.Conversation
 
-/***
- * Created by HoangRyan aka LilDua on 10/29/2023.
- */
 class ConversationDiffCallback(
     private val oldList: List<Conversation>,
     private val newList: List<Conversation>

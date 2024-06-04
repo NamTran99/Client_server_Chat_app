@@ -37,7 +37,7 @@ public class ItemConversationBindingImpl extends ItemConversationBinding  {
         this.mboundView0 = (androidx.constraintlayout.widget.ConstraintLayout) bindings[0];
         this.mboundView0.setTag(null);
         this.textLassMessage.setTag(null);
-        this.textNameUser.setTag(null);
+        this.textName setTag(null);
         this.textTimestamp.setTag(null);
         setRootTag(root);
         // listeners

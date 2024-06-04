@@ -184,7 +184,7 @@ public interface IRemoteService extends android.os.IInterface
           _data.writeInterfaceToken(DESCRIPTOR);
           boolean _status = mRemote.transact(Stub.TRANSACTION_getUsers, _data, _reply, 0);
           _reply.readException();
-          _result = _reply.createTypedArrayList(com.advanced.mockserver.User.CREATOR);
+          _result = _reply.createTypedArrayList(com.advanced.mockserver. CREATOR);
         }
         finally {
           _reply.recycle();

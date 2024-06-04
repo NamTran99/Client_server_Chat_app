@@ -1,8 +1,6 @@
 package com.advanced.mockserver.utils
 
-/***
- * Created by HoangRyan aka LilDua on 10/27/2023.
- */
+ 
 object Constants {
     //database key
     const val DATABASE_NAME = "chat-app.db"

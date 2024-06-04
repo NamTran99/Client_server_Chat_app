@@ -7,9 +7,6 @@ import androidx.room.PrimaryKey
 import com.advanced.mockserver.utils.Constants
 import kotlinx.parcelize.Parcelize
 
-/***
- * Created by HoangRyan aka LilDua on 10/27/2023.
- */
 @Parcelize
 @Entity(tableName = Constants.TABLE_USERS)
 data class User(

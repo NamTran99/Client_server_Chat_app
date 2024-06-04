@@ -3056,10 +3056,10 @@ drawable ic_playlist_remove
 drawable ic_search
 drawable ic_search_black_24
 drawable ic_send
-drawable image_hoang_thom
 drawable image_mai_trang
 drawable image_minh_quan
 drawable image_nam_tran
+drawable image_ngoc_lan
 drawable m3_appbar_background
 drawable m3_avd_hide_password
 drawable m3_avd_show_password

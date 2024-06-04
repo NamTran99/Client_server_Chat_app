@@ -25,13 +25,11 @@ import com.advanced.mockclient.R
 import com.advanced.mockclient.databinding.FragmentHomeBinding
 import com.advanced.mockserver.IRemoteService
 import com.advanced.mockserver.ui.home.conversation.ConversationAdapter
-import com.advanced.mockserver.ui.home.user.UserAdapter
+import com.advanced.mockserver.ui.home. UserAdapter
 import com.advanced.mockserver.utils.Constants
+import com.advanced.mockserver.utils.convertNameToImageResource
 import kotlinx.coroutines.launch
 
-/***
- * Created by HoangRyan aka LilDua on 10/28/2023.
- */
 class HomeFragment: Fragment() {
 
     private lateinit var binding: FragmentHomeBinding
@@ -95,7 +93,7 @@ class HomeFragment: Fragment() {
     }
 
     private fun loadUserDetails() {
-        binding.textNameUser.text = "Nam Trần"
+        binding.textName text = "Nam Trần"
         binding.imageContact.setImageResource(R.drawable.image_nam_tran)
     }
 
@@ -126,7 +124,9 @@ class HomeFragment: Fragment() {
             try {
                 if (isServiceBound) {
                     val remoteConversations = remoteService!!.conversation
-                    conversationAdapter.setData(remoteConversations.filter { it.receiverId.toInt() == 2 })
+                    conversationAdapter.setData(remoteConversations.filter { it.receiverId.toInt() == 2 }.map {
+                        it.copy(senderImage = convertNameToImageResource(it.senderName))
+                    })
                     Log.i(Constants.TAG, "setListenerUser: $remoteConversations ")
                 }
             } catch (remoteException: RemoteException) {
@@ -149,7 +149,9 @@ class HomeFragment: Fragment() {
             try {
                 if (isServiceBound) {
                     val remoteUsers = remoteService!!.users
-                    userAdapter.setData(remoteUsers.filterNot { it.id.toInt() == 2 })
+                    userAdapter.setData(remoteUsers.filterNot { it.id.toInt() == 2 }.map {
+                        it.copy(image = convertNameToImageResource(it.name))
+                    })
                     Log.i(Constants.TAG, "setListenerUser: $remoteUsers ")
                 }
             } catch (remoteException: RemoteException) {

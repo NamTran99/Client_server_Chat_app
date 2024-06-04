@@ -10,9 +10,7 @@ import kotlinx.coroutines.flow.flowOn
 import javax.inject.Inject
 import javax.inject.Singleton
 
-/***
- * Created by HoangRyan aka LilDua on 10/27/2023.
- */
+ 
 @Singleton
 class UserRepository @Inject constructor(private val userDao: UserDao) {
     fun insertUser(user: User) : Flow<Unit> = flow {

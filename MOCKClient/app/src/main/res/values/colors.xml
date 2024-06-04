@@ -7,4 +7,6 @@
     <color name="primary_color">#48426D</color>
     <color name="primary_text_color">#F0C3BE</color>
     <color name="primary_error">#F1AA9B</color>
+    <color name="colorPrimary">#f769ca</color>
+    <color name="colorBackgroundLoginBottom">#452f75</color>
 </resources>

@@ -1,12 +1,7 @@
 package com.advanced.mockserver.ui.chat
 
 import android.app.Dialog
-import android.app.Service
-import android.content.ComponentName
-import android.content.Intent
-import android.content.ServiceConnection
 import android.os.Bundle
-import android.os.IBinder
 import android.os.RemoteException
 import android.util.Log
 import android.view.LayoutInflater
@@ -16,25 +11,27 @@ import android.view.Window
 import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
+import androidx.lifecycle.repeatOnLifecycle
 import androidx.navigation.fragment.findNavController
 import com.advanced.mockclient.R
-import com.advanced.mockserver.ChatMessage
 import com.advanced.mockclient.databinding.FragmentChatBinding
+import com.advanced.mockserver.ChatMessage
 import com.advanced.mockserver.IRemoteService
+import com.advanced.mockserver.MainActivity
+import com.advanced.mockserver.data.AppLocal.isServerConnected
 import com.advanced.mockserver.ui.chat.message.MessageAdapter
 import com.advanced.mockserver.utils.Constants
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import java.text.SimpleDateFormat
 import java.util.Calendar
 import java.util.Locale
 
-/***
- * Created by HoangRyan aka LilDua on 10/28/2023.
- */
-class ChatFragment: Fragment() {
+class ChatFragment : Fragment() {
 
     private lateinit var binding: FragmentChatBinding
 
@@ -48,50 +45,26 @@ class ChatFragment: Fragment() {
     private var receiverName: String = ""
 
     //AIDL remote service
-    private var isServiceBound = false
-    private var remoteService: IRemoteService? = null
-
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        initConnection()
-    }
-
-    private fun initConnection() {
-        if(!isServiceBound) {
-            val intent = Intent(IRemoteService::class.java.name)
-            intent.action = "remote_service"
-            intent.setPackage("com.advanced.mockserver")
-            requireContext().bindService(intent,serviceConnection, Service.BIND_AUTO_CREATE)
-        }
-    }
-
-    private val serviceConnection: ServiceConnection = object : ServiceConnection {
-        override fun onServiceConnected(componentName: ComponentName, iBinder: IBinder) {
-            Log.d(Constants.TAG, "Service Connected")
-            remoteService = IRemoteService.Stub.asInterface(iBinder)
-            isServiceBound = true
-            loadChat()
-        }
-
-        override fun onServiceDisconnected(componentName: ComponentName) {
-            Log.d(Constants.TAG, "Service Disconnected")
-            isServiceBound = false
-        }
-    }
+    private val mainActivity = requireActivity() as? MainActivity
+    private val remoteService: IRemoteService?
+        get() = mainActivity?.remoteService
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = FragmentChatBinding.inflate(inflater,container,false)
+        binding = FragmentChatBinding.inflate(inflater, container, false)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.apply {
+
+            initObserver()
+
+
             lifecycleOwner = viewLifecycleOwner
             //Get selected user id
             receiverId = requireArguments().getLong(Constants.KEY_RECEIVER_ID)
@@ -105,27 +78,37 @@ class ChatFragment: Fragment() {
             recyclerViewChat.adapter = adapter
 
             chatFragment = this@ChatFragment
-            loadReceiverDetail(receiverName,receiverImage)
+            loadReceiverDetail(receiverName, receiverImage)
+        }
+    }
+
+    private fun initObserver() {
+        viewLifecycleOwner.lifecycleScope.launch {
+            viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.RESUMED) {
+                isServerConnected.collectLatest {
+                    if (it) {
+                        loadChat()
+                    }else{
+                        mainActivity?.initConnection()
+                    }
+                }
+            }
         }
     }
 
     private fun loadChat() {
         try {
-            if(isServiceBound) {
-                val remoteChatMessage = remoteService?.chatMessages ?: emptyList()
-                adapter.setData(remoteChatMessage.filter { it.conversationId == conversationId })
+            val remoteChatMessage = remoteService?.chatMessages ?: emptyList()
+            adapter.setData(remoteChatMessage.filter { it.conversationId == conversationId })
 //                binding.recyclerViewChat.smoothScrollToPosition(adapter.itemCount - 1)
-                Log.i(Constants.TAG, "remoteChatMessage: $remoteChatMessage ")
-            }else{
-                initConnection()
-            }
+            Log.i(Constants.TAG, "remoteChatMessage: $remoteChatMessage ")
         } catch (remoteException: RemoteException) {
             remoteException.printStackTrace()
         }
     }
 
-    private fun loadReceiverDetail(receiverName: String ,receiverImage: Int) {
-        binding.textNameUser.text = receiverName
+    private fun loadReceiverDetail(receiverName: String, receiverImage: Int) {
+        binding.textName text = receiverName
         binding.imageContact.setImageResource(receiverImage)
     }
 
@@ -140,7 +123,7 @@ class ChatFragment: Fragment() {
 
         viewLifecycleOwner.lifecycleScope.launch(Dispatchers.IO) {
             remoteService?.sendMessage(message)
-            remoteService?.updateConversation(conversationId!!,message.message,getCurrentTime())
+            remoteService?.updateConversation(conversationId!!, message.message, getCurrentTime())
             val remoteChatMessage = remoteService?.chatMessages ?: emptyList()
             withContext(Dispatchers.Main) {
                 adapter.setData(remoteChatMessage.filter { it.conversationId == conversationId })
@@ -179,27 +162,13 @@ class ChatFragment: Fragment() {
     }
 
     //navigation
-    fun backToHome(){
+    fun backToHome() {
         findNavController().popBackStack()
     }
 
-    override fun onResume() {
-        super.onResume()
-        if (!isServiceBound) {
-            initConnection()
-        }
-    }
 
     override fun onStart() {
         super.onStart()
-        if(!isServiceBound) {
-            initConnection()
-        }
         loadChat()
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
-        requireContext().unbindService(serviceConnection)
     }
 }
