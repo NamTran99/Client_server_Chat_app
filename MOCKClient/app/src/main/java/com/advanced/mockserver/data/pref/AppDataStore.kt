@@ -1,6 +1,8 @@
 package com.advanced.mockserver.data.pref
 
 import androidx.datastore.core.DataStore
+import androidx.datastore.preferences.core.booleanPreferencesKey
+import androidx.datastore.preferences.core.edit
 import java.util.prefs.Preferences
 
 

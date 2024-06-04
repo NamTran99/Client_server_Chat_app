@@ -1,1 +1,3 @@
 /MOCKClient/app/src/test/java/com/advanced/mockclient/
+/MOCKClient/app/build/*
+/MOCKServer/app/build/*

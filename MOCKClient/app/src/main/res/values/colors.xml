@@ -9,4 +9,5 @@
     <color name="primary_error">#F1AA9B</color>
     <color name="colorPrimary">#f769ca</color>
     <color name="colorBackgroundLoginBottom">#452f75</color>
+    <color name="colorPrimaryDark">#000023</color>
 </resources>

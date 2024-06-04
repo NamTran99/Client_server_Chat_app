@@ -59,7 +59,7 @@ class RemoteService : Service(){
             data: User
         ){
             CoroutineScope(Dispatchers.IO).launch {
-                userLogin.emit()
+//                userLogin.emit()
             }
         }
     }

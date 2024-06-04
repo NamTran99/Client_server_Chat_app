@@ -34,7 +34,6 @@
     <string name="server_chat_app">Server Chat App</string>
     <string name="conversations">Conversations</string>
     <string name="client_chat_app">Client Chat App</string>
-    <string name="app_name">Login Page</string>
     <string name="login_text">Login</string>
     <string name="edit_text_username">Username</string>
     <string name="edit_text_password">Password</string>
