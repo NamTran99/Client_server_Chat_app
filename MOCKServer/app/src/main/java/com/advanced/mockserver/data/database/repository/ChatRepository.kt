@@ -10,9 +10,7 @@ import kotlinx.coroutines.flow.flowOn
 import javax.inject.Inject
 import javax.inject.Singleton
 
-/***
- * Created by HoangRyan aka LilDua on 10/28/2023.
- */
+  
 @Singleton
 class ChatRepository @Inject constructor(private val chatDao: ChatDao) {
     fun insertChat(chatMessage: ChatMessage): Flow<Unit> = flow {

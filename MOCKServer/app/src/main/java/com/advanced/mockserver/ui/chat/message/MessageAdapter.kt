@@ -9,9 +9,7 @@ import com.advanced.mockserver.databinding.ItemReceivedMessageBinding
 import com.advanced.mockserver.databinding.ItemSentMessageBinding
 import com.advanced.mockserver.utils.Constants
 
-/***
- * Created by HoangRyan aka LilDua on 10/28/2023.
- */
+  
 class MessageAdapter (
     private val senderId: Long,
     private val receivedImage: Int

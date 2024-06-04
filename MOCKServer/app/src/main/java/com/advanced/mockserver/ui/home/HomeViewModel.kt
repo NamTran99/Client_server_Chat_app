@@ -9,9 +9,7 @@ import com.advanced.mockserver.User
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
-/***
- * Created by HoangRyan aka LilDua on 10/28/2023.
- */
+  
 @HiltViewModel
 class HomeViewModel @Inject constructor(
     private val userRepository: UserRepository,

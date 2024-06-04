@@ -6,9 +6,7 @@ import com.advanced.mockserver.Conversation
 import com.advanced.mockserver.utils.Constants
 import java.sql.Timestamp
 
-/***
- * Created by HoangRyan aka LilDua on 10/28/2023.
- */
+  
 @Dao
 interface ConversationDao {
     @Insert
@@ -30,6 +28,4 @@ interface ConversationDao {
 
     @Query("DELETE FROM ${Constants.TABLE_CONVERSATIONS} WHERE ${Constants.KEY_CONVERSATION_ID} = :conversationId")
     fun deleteConversationById(conversationId: Long)
-
-
 }

@@ -3,9 +3,7 @@ package com.advanced.mockserver.ui.home.user
 import androidx.recyclerview.widget.DiffUtil
 import com.advanced.mockserver.User
 
-/***
- * Created by HoangRyan aka LilDua on 10/28/2023.
- */
+  
 class UserDiffCallback(
     private val oldList: List<User>,
     private val newList: List<User>

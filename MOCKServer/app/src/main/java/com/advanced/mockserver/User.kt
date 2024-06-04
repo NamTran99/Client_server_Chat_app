@@ -13,5 +13,6 @@ data class User(
     @PrimaryKey(autoGenerate = true)
     val id: Long = 0,
     val name: String,
+    val isOnline: Boolean = false,
     @DrawableRes val image: Int
 ): Parcelable

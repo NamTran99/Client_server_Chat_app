@@ -8,9 +8,7 @@ import com.advanced.mockserver.User
 import com.advanced.mockserver.databinding.ItemUserBinding
 import com.advanced.mockserver.ui.home.HomeFragment
 
-/***
- * Created by HoangRyan aka LilDua on 10/28/2023.
- */
+  
 class UserAdapter (
     private val homeFragment: HomeFragment
 ) : RecyclerView.Adapter<UserAdapter.ViewHolder>() {

@@ -29,9 +29,7 @@ import java.text.SimpleDateFormat
 import java.util.Calendar
 import java.util.Locale
 
-/***
- * Created by HoangRyan aka LilDua on 10/28/2023.
- */
+  
 @AndroidEntryPoint
 class HomeFragment: Fragment() {
 

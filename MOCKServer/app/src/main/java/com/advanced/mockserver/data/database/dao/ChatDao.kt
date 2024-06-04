@@ -5,9 +5,6 @@ import androidx.room.*
 import com.advanced.mockserver.ChatMessage
 import com.advanced.mockserver.utils.Constants
 
-/***
- * Created by HoangRyan aka LilDua on 10/28/2023.
- */
 // ChatDao.kt
 @Dao
 interface ChatDao {

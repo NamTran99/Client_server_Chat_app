@@ -3,9 +3,7 @@ package com.advanced.mockserver.ui.chat.message
 import androidx.recyclerview.widget.DiffUtil
 import com.advanced.mockserver.ChatMessage
 
-/***
- * Created by HoangRyan aka LilDua on 10/28/2023.
- */
+  
 class MessageDiffCallback(
     private val oldList: List<ChatMessage>,
     private val newList: List<ChatMessage>

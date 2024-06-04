@@ -11,9 +11,7 @@ import java.sql.Timestamp
 import javax.inject.Inject
 import javax.inject.Singleton
 
-/***
- * Created by HoangRyan aka LilDua on 10/28/2023.
- */
+  
 @Singleton
 class ConversationRepository @Inject constructor(private val conversationDao: ConversationDao) {
     fun insertConversation(conversation: Conversation): Flow<Unit> = flow{

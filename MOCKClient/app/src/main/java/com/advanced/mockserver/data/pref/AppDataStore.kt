@@ -1,15 +1,16 @@
 package com.advanced.mockserver.data.pref
 
 import androidx.datastore.core.DataStore
+import androidx.datastore.preferences.core.PreferenceDataStoreFactory
+import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.core.booleanPreferencesKey
 import androidx.datastore.preferences.core.edit
-import java.util.prefs.Preferences
+import androidx.datastore.preferences.preferencesDataStoreFile
+import com.advanced.mockserver.app.MyApplication
 
 
-class AppDataStore constructor(
-    private val appStore: DataStore<Preferences>,
-) {
-    private val userData = appStore.data
+object AppDataStore  {
+    private val appStore = PreferenceDataStoreFactory.create { MyApplication.instance.preferencesDataStoreFile("Server")}
 
 //    val loginState: Flow<LoginState> = userData.map {
 //        it[KEY_LOGIN_STATE].convertToObject(defaultValue = LoginState())
@@ -29,8 +30,6 @@ class AppDataStore constructor(
         }
     }
 
-    companion object {
-        private val KEY_LOGIN_STATE = booleanPreferencesKey("keyLoginState")
+    private val KEY_LOGIN_STATE = booleanPreferencesKey("keyLoginState")
 
-    }
 }

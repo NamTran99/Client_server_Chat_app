@@ -7,7 +7,6 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
 class AuthenticationViewModel: ViewModel(){
-    val preferences = PreferenceManager.getDefaultSharedPreferences(application)
     var loginResult = MutableLiveData<Int>()
     var passwordValidation = MutableLiveData<Int>()
     var userNameValidation = MutableLiveData<Int>()
