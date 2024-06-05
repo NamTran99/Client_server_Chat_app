@@ -25,7 +25,7 @@ import com.advanced.mockclient.R
 import com.advanced.mockclient.databinding.FragmentHomeBinding
 import com.advanced.mockserver.IRemoteService
 import com.advanced.mockserver.ui.home.conversation.ConversationAdapter
-import com.advanced.mockserver.ui.home. UserAdapter
+import com.advanced.mockserver.ui.home.user.UserAdapter
 import com.advanced.mockserver.utils.Constants
 import com.advanced.mockserver.utils.convertNameToImageResource
 import kotlinx.coroutines.launch
@@ -93,7 +93,7 @@ class HomeFragment: Fragment() {
     }
 
     private fun loadUserDetails() {
-        binding.textName text = "Nam Trần"
+        binding.textNameUser.text = "Nam Trần"
         binding.imageContact.setImageResource(R.drawable.image_nam_tran)
     }
 

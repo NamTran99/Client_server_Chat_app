@@ -108,7 +108,7 @@ class ChatFragment : Fragment() {
     }
 
     private fun loadReceiverDetail(receiverName: String, receiverImage: Int) {
-        binding.textName text = receiverName
+        binding.textNameUser.text = receiverName
         binding.imageContact.setImageResource(receiverImage)
     }
 

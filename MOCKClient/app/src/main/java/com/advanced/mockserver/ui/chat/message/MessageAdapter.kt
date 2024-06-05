@@ -25,7 +25,7 @@ class MessageAdapter (
         RecyclerView.ViewHolder(receivedBinding.root){
             fun bind(chatMessage: ChatMessage) {
                 receivedBinding.message = chatMessage
-                receivedBinding.image setImageResource(receivedImage)
+                receivedBinding.imageUser.setImageResource(receivedImage)
             }
     }
 

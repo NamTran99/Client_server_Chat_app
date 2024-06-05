@@ -4,10 +4,13 @@
     <color name="white">#FFFFFFFF</color>
     <color name="light_gray">#F5F7FA</color>
     <color name="secondary_color">#312051</color>
-    <color name="primary_color">#48426D</color>
+    <color name="primary_color">#f769ca</color>
     <color name="primary_text_color">#F0C3BE</color>
     <color name="primary_error">#F1AA9B</color>
     <color name="colorPrimary">#f769ca</color>
     <color name="colorBackgroundLoginBottom">#452f75</color>
     <color name="colorPrimaryDark">#000023</color>
+    <color name="colorPrimarySignUp">#f769ca</color>
+    <color name="colorBackgroundLoginBottomSignUp">#1e2b73</color>
+    <color name="colorPrimaryDarkSignUp">#010137</color>
 </resources>
