@@ -13,5 +13,5 @@ interface IRemoteService {
    void removeConversationById(in long conversationId);
    void removeUserById(in long userId);
    void updateConversation(in long conversationId, in String lastMessage ,in String timestamp);
-   void loginUser(in User data);
+   void loginUser(in String username, in String passWord);
 }

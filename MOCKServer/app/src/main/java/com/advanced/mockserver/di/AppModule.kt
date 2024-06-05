@@ -2,10 +2,12 @@ package com.advanced.mockserver.di
 
 import android.app.Application
 import com.advanced.mockserver.data.database.AppDatabase
+import com.advanced.mockserver.data.database.dao.UserDao
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
+import javax.inject.Provider
 import javax.inject.Singleton
 
 /***
@@ -21,7 +23,7 @@ object AppModule {
     }
     @Provides
     @Singleton
-    fun provideDatabase(application: ChatApplication) = AppDatabase.getDatabase(application)
+    fun provideDatabase(application: ChatApplication, userDao: Provider<UserDao>) = AppDatabase.getDatabase(application, userDao)
 
     @Provides
     @Singleton

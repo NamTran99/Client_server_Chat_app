@@ -13,12 +13,14 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
 
 class RemoteService : Service(){
-    private lateinit var chatDatabase: AppDatabase
+    @Inject
+    lateinit var chatDatabase: AppDatabase
     override fun onBind(intent: Intent?): IBinder {
-        chatDatabase = AppDatabase.getDatabase(this)
+//        chatDatabase = AppDatabase.getDatabase(this)
         return mBinder
     }
 
@@ -56,9 +58,10 @@ class RemoteService : Service(){
         }
 
         override fun loginUser(
-            data: User
+            username: String,
+            passWord: String,
         ){
-
+            chatDatabase.userDao().loginUser(username, passWord)
 //            CoroutineScope(Dispatchers.IO).launch {
 ////                userLogin.emit()
 //            }

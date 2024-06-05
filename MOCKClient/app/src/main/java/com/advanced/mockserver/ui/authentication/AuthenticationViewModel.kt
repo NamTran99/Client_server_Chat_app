@@ -20,7 +20,8 @@ class AuthenticationViewModel: ViewModel(){
 
         if (isInputValid()) {
 //            checkIfUserLogged()
-            loginResult.value = LoginResult.SUCCESSFUL.value
+//            loginResult.value = LoginResult.SUCCESSFUL.value
+
         }
 
     }

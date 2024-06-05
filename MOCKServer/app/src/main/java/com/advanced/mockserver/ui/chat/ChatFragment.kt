@@ -70,7 +70,7 @@ class ChatFragment: Fragment() {
             chatViewModel.getUserById(receiverId).observe(viewLifecycleOwner) {
                 receiverName = it.name
                 binding.textNameUser.text = it.name
-                binding.imageContact.setImageResource(it.image)
+                binding.imageContact.setImageBitmap(it.getImageBitMap())
             }
 
             initConversation()   //Init view

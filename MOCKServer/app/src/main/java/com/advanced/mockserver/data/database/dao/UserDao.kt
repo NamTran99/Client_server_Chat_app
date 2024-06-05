@@ -23,6 +23,6 @@ interface UserDao {
     @Query("SELECT * FROM ${Constants.TABLE_USERS} WHERE ${Constants.COLUMN_ID} = :userId")
     fun getUserById(userId: Long): LiveData<User>
 
-    @Query("UPDATE ${Constants.TABLE_USERS} SET ${Constants.STATUS_ID} = :isOnline  WHERE ${Constants.COLUMN_ID} = :userId")
-    fun loginUser(userId: Long, isOnline: Boolean)
+    @Query("UPDATE ${Constants.TABLE_USERS} SET ${Constants.STATUS_ID} = :isOnline  WHERE ${Constants.COLUMN_USER_NAME} = :userName AND ${Constants.COLUMN_PASSWORD} = :passWord")
+    fun loginUser(userName: String, passWord: String,  isOnline: Boolean =  true): Int
 }

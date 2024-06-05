@@ -22,6 +22,7 @@ class ConversationRepository @Inject constructor(private val conversationDao: Co
         return conversationDao.getAllConversations()
     }
 
+    fun getRemoteAllConversations() = conversationDao.getRemoteAllConversations()
     fun updateConversation(conversationId: Long, lastMessage: String, timestamp: String): Flow<Unit> = flow {
         emit(conversationDao.updateConversation(conversationId, lastMessage,timestamp))
     }.flowOn(Dispatchers.IO)

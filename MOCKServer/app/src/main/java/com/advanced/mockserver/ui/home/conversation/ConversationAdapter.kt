@@ -24,7 +24,7 @@ class ConversationAdapter(
         RecyclerView.ViewHolder(binding.root) {
         fun bind(conversation: Conversation) {
             binding.conversation = conversation
-            binding.imageConversation.setImageResource(conversation.receiverImage)
+//            binding.imageConversation.setImageBitmap(conversation.receiverImage)
         }
     }
 
@@ -49,7 +49,7 @@ class ConversationAdapter(
             bundle.putLong(Constants.KEY_CONVERSATION_ID, conversation.conversationId)
             bundle.putLong(Constants.KEY_SENDER_ID, conversation.senderId)
             bundle.putLong(Constants.KEY_RECEIVER_ID, conversation.receiverId)
-            bundle.putInt(Constants.KEY_RECEIVER_IMAGE, conversation.receiverImage)
+//            bundle.putInt(Constants.KEY_RECEIVER_IMAGE, conversation.receiverImage)
 
             navController.navigate(
                 R.id.action_homeFragment_to_chatFragment,

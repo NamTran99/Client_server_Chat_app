@@ -21,6 +21,7 @@ import com.advanced.mockserver.ChatMessage
 import com.advanced.mockserver.IRemoteService
 import com.advanced.mockserver.MainActivity
 import com.advanced.mockserver.data.AppLocal.isServerConnected
+import com.advanced.mockserver.service.ConnectServer
 import com.advanced.mockserver.ui.chat.message.MessageAdapter
 import com.advanced.mockserver.utils.Constants
 import kotlinx.coroutines.Dispatchers
@@ -47,7 +48,7 @@ class ChatFragment : Fragment() {
     //AIDL remote service
     private val mainActivity = requireActivity() as? MainActivity
     private val remoteService: IRemoteService?
-        get() = mainActivity?.remoteService
+        get() = ConnectServer.remoteService
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -89,7 +90,7 @@ class ChatFragment : Fragment() {
                     if (it) {
                         loadChat()
                     }else{
-                        mainActivity?.initConnection()
+                        ConnectServer.initConnection()
                     }
                 }
             }

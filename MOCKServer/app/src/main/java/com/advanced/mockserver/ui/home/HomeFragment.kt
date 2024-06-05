@@ -15,9 +15,8 @@ import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.advanced.mockserver.R
 import com.advanced.mockserver.Conversation
-import com.advanced.mockserver.User
+import com.advanced.mockserver.R
 import com.advanced.mockserver.databinding.FragmentHomeBinding
 import com.advanced.mockserver.ui.home.conversation.ConversationAdapter
 import com.advanced.mockserver.ui.home.user.UserAdapter
@@ -56,17 +55,48 @@ class HomeFragment: Fragment() {
             lifecycleOwner = viewLifecycleOwner
             homeFragment = this@HomeFragment
 
-            homeViewModel.conversations.observe(viewLifecycleOwner) {
-                if (it.isEmpty()) {
-                    insertNewUser()
-                }else{
-                    //Get key user id
-                    val currentUser = homeViewModel.getUserById(1)
-                    currentUser.observe(viewLifecycleOwner) { user ->
-                        binding.textNameUser.text = user.name
-                        binding.imageContact.setImageResource(user.image)
-                    }
+//            getCurrentConversation
+
+            homeViewModel.users.observe(viewLifecycleOwner){
+                val conversation = homeViewModel.getCurrentConversation()
+
+                val mainUser = it.find { it.id == 1L }
+                val lackConversation = it.filter { it != mainUser.id && }
+
+                val conversation = Conversation(
+                    senderId = 1, senderImage = R.drawable.image_ngoc_lan, senderName = "Ngọc Lan",
+                    receiverId = user.id, receiverImage = user.image, receiverName = user.name,
+                    lastMessage = "", timestamp = getCurrentTime()
+                )
+
+                viewLifecycleOwner.lifecycleScope.launch {
+                    homeViewModel.insertConversation(conversation)
+                        .catch { error ->
+                            Toast.makeText(
+                                requireContext(),
+                                "Unable to register! ${error.message}",
+                                Toast.LENGTH_SHORT
+                            ).show()
+                        }
+                        .collect {
+                            //Do nothing
+                        }
                 }
+            }
+            }
+
+            homeViewModel.conversations.observe(viewLifecycleOwner) {
+                val currentUser = homeViewModel.getUserById(1)
+                currentUser.observe(viewLifecycleOwner) { user ->
+                    binding.textNameUser.text = user.name
+                    binding.imageContact.setImageBitmap(user.getImageBitMap())
+                }
+//                if (it.isEmpty()) {
+                    insertNewUser()
+//                }else{
+//                    Get key user id
+//
+//                }
             }
 
             //User listener
@@ -124,41 +154,41 @@ class HomeFragment: Fragment() {
     }
     private fun insertNewUser() {
         // Add the contact using Kotlin Flow
-        val users = listOf(
-            User(id = 1, name = "Ngọc Lan", image = R.drawable.image_ngoc_lan),
-            User(id = 2, name = "Nam Trần", image = R.drawable.image_nam_tran),
-            User(id = 3, name = "Mai Trang", image = R.drawable.image_mai_trang),
-            User(id = 4, name = "Minh Quân", image = R.drawable.image_minh_quan),
-        )
-        for (user in users) {
-            viewLifecycleOwner.lifecycleScope.launch {
-                homeViewModel.insertUser(user)
-                    .catch { error ->
-                        Toast.makeText(requireContext(), "Unable to register! ${error.message}", Toast.LENGTH_SHORT).show()
-                    }
-                    .collect {
-                        //Do nothing
-                    }
-            }
-        }
+//        val users = listOf(
+//            User(id = 1, name = "Ngọc Lan", image = R.drawable.image_ngoc_lan),
+//            User(id = 2, name = "Nam Trần", image = R.drawable.image_nam_tran),
+//            User(id = 3, name = "Mai Trang", image = R.drawable.image_mai_trang),
+//            User(id = 4, name = "Minh Quân", image = R.drawable.image_minh_quan),
+//        )
+//        for (user in users) {
+//            viewLifecycleOwner.lifecycleScope.launch {
+//                homeViewModel.insertUser(user)
+//                    .catch { error ->
+//                        Toast.makeText(requireContext(), "Unable to register! ${error.message}", Toast.LENGTH_SHORT).show()
+//                    }
+//                    .collect {
+//                        //Do nothing
+//                    }
+//            }
+//        }
 
-        for (user in users.filterNot { user ->  user.id.toInt() == 1}) {
-            //Add new conversation
-            val conversation = Conversation(
-                senderId = 1, senderImage = R.drawable.image_ngoc_lan, senderName = "Ngọc Lan",
-                receiverId = user.id, receiverImage = user.image, receiverName = user.name,
-                lastMessage = "", timestamp = getCurrentTime())
-
-            viewLifecycleOwner.lifecycleScope.launch {
-                homeViewModel.insertConversation(conversation)
-                    .catch { error ->
-                        Toast.makeText(requireContext(), "Unable to register! ${error.message}", Toast.LENGTH_SHORT).show()
-                    }
-                    .collect {
-                        //Do nothing
-                    }
-            }
-        }
+//        for (user in users.filterNot { user ->  user.id.toInt() == 1}) {
+//            //Add new conversation
+//            val conversation = Conversation(
+//                senderId = 1, senderImage = R.drawable.image_ngoc_lan, senderName = "Ngọc Lan",
+//                receiverId = user.id, receiverImage = user.image, receiverName = user.name,
+//                lastMessage = "", timestamp = getCurrentTime())
+//
+//            viewLifecycleOwner.lifecycleScope.launch {
+//                homeViewModel.insertConversation(conversation)
+//                    .catch { error ->
+//                        Toast.makeText(requireContext(), "Unable to register! ${error.message}", Toast.LENGTH_SHORT).show()
+//                    }
+//                    .collect {
+//                        //Do nothing
+//                    }
+//            }
+//        }
     }
 
     fun removeUserWithId(userId: Long){

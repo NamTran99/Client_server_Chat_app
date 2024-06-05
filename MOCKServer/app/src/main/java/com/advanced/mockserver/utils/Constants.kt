@@ -6,6 +6,8 @@ object Constants {
     const val DATABASE_NAME = "chat-app.db"
     const val DATABASE_VERSION = 1
     const val COLUMN_ID = "id"
+    const val COLUMN_USER_NAME = "userName"
+    const val COLUMN_PASSWORD = "password"
     const val STATUS_ID = "isOnline"
 
     //User

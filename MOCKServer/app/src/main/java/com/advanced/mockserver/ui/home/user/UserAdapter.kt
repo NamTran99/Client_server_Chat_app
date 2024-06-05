@@ -17,7 +17,7 @@ class UserAdapter (
         RecyclerView.ViewHolder(binding.root) {
         fun bind(user: User) {
             binding.user = user
-            binding.imageContact.setImageResource(user.image)
+            binding.imageContact.setImageBitmap(user.getImageBitMap())
         }
     }
 

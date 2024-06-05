@@ -19,8 +19,11 @@ class HomeViewModel @Inject constructor(
     // LiveData to hold the list of users
     val users: LiveData<List<User>> = userRepository.getAllUsers()
 
+
     // LiveData to hold the list of conversations
     val conversations: LiveData<List<Conversation>> = conversationRepository.getAllConversation()
+
+    fun getCurrentConversation()  = conversationRepository.getRemoteAllConversations()
 
     fun insertUser(user: User) = userRepository.insertUser(user)
     fun getUserById(userId: Long): LiveData<User> {

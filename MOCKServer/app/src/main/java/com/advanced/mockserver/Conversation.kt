@@ -17,7 +17,7 @@ data class Conversation(
     @DrawableRes val senderImage: Int,
     val senderName: String,
     val receiverId: Long,
-    @DrawableRes val receiverImage: Int,
+    val receiverImage: String,
     val receiverName: String,
     val lastMessage: String,
     val timestamp: String

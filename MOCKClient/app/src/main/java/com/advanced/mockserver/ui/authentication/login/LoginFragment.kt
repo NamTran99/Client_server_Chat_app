@@ -82,7 +82,13 @@ class LoginFragment : Fragment() {
     private fun initListener() {
         binding.apply {
             buttonLogin.setOnClickListener {
-                viewModel.login()
+
+                viewModel.apply {
+                    userName = binding.editUsernameInput.text.toString()
+                    passWord = binding.editPasswordInput.text.toString()
+
+                    login()
+                }
             }
         }
     }
